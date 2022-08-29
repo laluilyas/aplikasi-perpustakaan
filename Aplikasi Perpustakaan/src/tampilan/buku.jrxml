@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ecfbdf70-f0f4-4b25-9151-e11a54eda9c0">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbbuku.`kdbuku` AS tbbuku_kdbuku,
+     tbbuku.`judul` AS tbbuku_judul,
+     tbbuku.`tanggal_terbit` AS tbbuku_tanggal_terbit,
+     tbbuku.`pengarang` AS tbbuku_pengarang
+FROM
+     `tbbuku` tbbuku]]>
+	</queryString>
+	<field name="tbbuku_kdbuku" class="java.lang.Integer"/>
+	<field name="tbbuku_judul" class="java.lang.String"/>
+	<field name="tbbuku_tanggal_terbit" class="java.lang.String"/>
+	<field name="tbbuku_pengarang" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

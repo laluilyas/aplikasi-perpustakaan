@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa62826c-cac0-4233-b52a-d813e5a0efd9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbpeminjaman.`idpinjam` AS tbpeminjaman_idpinjam,
+     tbpeminjaman.`noid` AS tbpeminjaman_noid,
+     tbpeminjaman.`tgl` AS tbpeminjaman_tgl,
+     isi.`idpinjam` AS isi_idpinjam,
+     isi.`kd_buku` AS isi_kd_buku,
+     isi.`nama` AS isi_nama,
+     isi.`judul` AS isi_judul,
+     isi.`tglpinjam` AS isi_tglpinjam,
+     isi.`tglkembali` AS isi_tglkembali
+FROM
+     `isi` isi INNER JOIN `tbpeminjaman` tbpeminjaman ON isi.`idpinjam` = tbpeminjaman.`idpinjam`
+WHERE
+tbpeminjaman.idpinjam=$P{id}]]>
+	</queryString>
+	<field name="tbpeminjaman_idpinjam" class="java.lang.String"/>
+	<field name="tbpeminjaman_noid" class="java.lang.String"/>
+	<field name="tbpeminjaman_tgl" class="java.sql.Date"/>
+	<field name="isi_idpinjam" class="java.lang.String"/>
+	<field name="isi_kd_buku" class="java.lang.String"/>
+	<field name="isi_nama" class="java.lang.String"/>
+	<field name="isi_judul" class="java.lang.String"/>
+	<field name="isi_tglpinjam" class="java.sql.Date"/>
+	<field name="isi_tglkembali" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9792f20c-7b30-4ff9-a32e-092d381b9806" x="-11" y="13" width="813" height="46"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="24"/>
+				</textElement>
+				<text><![CDATA[IREPORT PEMINJAMAN BUKU]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="95" splitType="Stretch">
+			<textField>
+				<reportElement uuid="e32fd006-e70d-43ad-8f97-822502664a28" x="642" y="11" width="126" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbpeminjaman_tgl}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="10a542d6-08af-4cad-a555-ae08940ddc6c" x="227" y="75" width="95" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[NO Anggota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b1d7038-7b69-449c-a1a5-f2c59960bd97" x="139" y="75" width="88" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Nama ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e18e523b-12f0-4ceb-980f-2d490d2164b5" x="0" y="75" width="66" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c7cb5452-ff6e-42c7-a40a-2c1bba015d77" x="66" y="75" width="73" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Kode Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6f7bcd2b-8360-4749-86c0-26791913c08e" x="322" y="75" width="87" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Kode Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4fbf367d-8b26-4807-a7b6-fa97bdaf6685" x="409" y="75" width="146" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Judul Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="85e9c8d2-5252-4684-be69-e89ac4fa3c72" x="555" y="75" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Tanggal Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b368a55f-eb57-47f5-b87b-c6c665586d97" x="655" y="75" width="147" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Tanggal Kembali]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="9b6c5b63-67bb-4158-9577-794a1eccfe9c" x="-11" y="75" width="813" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="6f573c94-66fb-4d26-87d1-8165b1c73041" x="578" y="11" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Tanggal  :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement uuid="a0d4245d-5052-4713-9e95-fe35ee928ed5" x="-11" y="0" width="813" height="4"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="0fa28fd4-6bfe-4080-b43c-f5291406693b" x="66" y="7" width="73" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{isi_idpinjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a829e35e-bdc7-44c8-9324-d3bcfd1df10d" x="322" y="7" width="87" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{isi_kd_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e6611c47-75c7-4663-9cde-7e44792f94ca" x="409" y="7" width="146" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{isi_judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="14e6b27e-c401-4a9e-83a0-d4a58fce9f7f" x="555" y="7" width="113" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{isi_tglpinjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="742786f9-dbfb-4779-a7ee-bc28cf9ddca1" x="668" y="7" width="134" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{isi_tglkembali}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="38d220cc-fe63-4bba-be32-5523c51e5152" x="0" y="7" width="66" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c5926eac-2396-495a-aba5-0efa35f1a4e4" x="139" y="7" width="88" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{isi_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e2934438-3fb3-49cf-b43a-dc8f37b2b9b5" x="227" y="7" width="95" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbpeminjaman_noid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

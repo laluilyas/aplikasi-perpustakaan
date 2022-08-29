@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05c4e495-109a-4746-bc7d-9ca0545edf93">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbsiswa.`noid` AS tbsiswa_noid,
+     tbsiswa.`nmsiswa` AS tbsiswa_nmsiswa,
+     tbsiswa.`kelas` AS tbsiswa_kelas,
+     tbsiswa.`jk` AS tbsiswa_jk,
+     tbsiswa.`notlp` AS tbsiswa_notlp,
+     tbsiswa.`alamat` AS tbsiswa_alamat
+FROM
+     `tbsiswa` tbsiswa]]>
+	</queryString>
+	<field name="tbsiswa_noid" class="java.lang.String"/>
+	<field name="tbsiswa_nmsiswa" class="java.lang.String"/>
+	<field name="tbsiswa_kelas" class="java.lang.String"/>
+	<field name="tbsiswa_jk" class="java.lang.String"/>
+	<field name="tbsiswa_notlp" class="java.lang.String"/>
+	<field name="tbsiswa_alamat" class="java.lang.String"/>
+	<variable name="variable1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9eda3de0-cbc5-4a93-837d-36acf5fe2f23" x="0" y="0" width="555" height="42"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="24"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA SISWA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="25fa6f9a-8d92-4c93-884d-5d8bd69710c1" x="0" y="15" width="34" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="25fa6f9a-8d92-4c93-884d-5d8bd69710c1" x="34" y="15" width="77" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[No Anggota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="25fa6f9a-8d92-4c93-884d-5d8bd69710c1" x="111" y="15" width="94" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="25fa6f9a-8d92-4c93-884d-5d8bd69710c1" x="205" y="15" width="82" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="25fa6f9a-8d92-4c93-884d-5d8bd69710c1" x="287" y="15" width="82" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="25fa6f9a-8d92-4c93-884d-5d8bd69710c1" x="460" y="15" width="82" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="25fa6f9a-8d92-4c93-884d-5d8bd69710c1" x="369" y="15" width="82" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[No Telepon]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="62" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="eaca0f5a-413b-41bf-88d1-42d5eacf0475" x="48" y="0" width="63" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbsiswa_noid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="73c109f5-a9ae-4bbd-bca8-18a1047df239" x="111" y="0" width="94" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbsiswa_nmsiswa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d32a59cf-0a2c-4e18-b741-009eb9780742" x="222" y="0" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbsiswa_kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="93057227-2e1e-401f-84e7-7b30618ab832" x="287" y="0" width="73" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbsiswa_jk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ae51537f-c648-4e49-a213-e9f9ebd259b1" x="360" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbsiswa_notlp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7cb0447d-263d-460f-9de5-9dbe47c8ad0d" x="460" y="0" width="81" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbsiswa_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f5f21256-6a88-450d-bf29-9f4cff60b3e6" x="0" y="0" width="48" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

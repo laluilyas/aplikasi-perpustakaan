@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d86c87e6-b553-44ac-864f-ac571456ee0a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbbuku.`kdbuku` AS tbbuku_kdbuku,
+     tbbuku.`judul` AS tbbuku_judul,
+     tbbuku.`tanggal_terbit` AS tbbuku_tanggal_terbit,
+     tbbuku.`pengarang` AS tbbuku_pengarang
+FROM
+     `tbbuku` tbbuku]]>
+	</queryString>
+	<field name="tbbuku_kdbuku" class="java.lang.Integer"/>
+	<field name="tbbuku_judul" class="java.lang.String"/>
+	<field name="tbbuku_tanggal_terbit" class="java.lang.String"/>
+	<field name="tbbuku_pengarang" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="87ea1217-63b0-4a78-aeaa-2953045ddcb5" x="0" y="15" width="802" height="42"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="24"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA BUKU]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d507014c-67e3-4b0c-aa67-30bff2b4fdb0" x="0" y="45" width="73" height="20"/>
+				<textElement>
+					<font fontName="Arial Black" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="48a8ac45-6f70-4d48-983f-569a39bdf6d0" x="73" y="45" width="116" height="20"/>
+				<textElement>
+					<font fontName="Arial Black" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kode Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ee7ee19-9da8-4d77-998a-cd440c42942b" x="189" y="45" width="139" height="20"/>
+				<textElement>
+					<font fontName="Arial Black" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Judul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f8706174-9ea6-4c7d-87c7-5033746137df" x="328" y="45" width="123" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Tanggal Terbit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf71cc1d-960d-4633-8f8c-a21ec0e7e8b7" x="486" y="45" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Pengarang]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="19" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="15c08873-f0a8-4f7c-a3c3-19b508f65c0a" x="189" y="0" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbbuku_judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ca8c53f5-cbdf-4858-9615-99b3116918b7" x="328" y="0" width="123" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbbuku_tanggal_terbit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3a5b8fa8-6dc0-40b8-863c-f81ffe6501aa" x="486" y="0" width="180" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbbuku_pengarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6b8f0a73-2079-4b0e-893f-bcf11fe9b08e" x="0" y="0" width="73" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8e02a071-ae12-409c-9802-c9869af25881" x="73" y="0" width="116" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tbbuku_kdbuku}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
